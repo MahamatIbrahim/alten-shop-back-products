@@ -1,0 +1,17 @@
+# Node.js
+/node_modules
+
+# Logs
+*.log
+
+# Frontend Build Output
+/front/dist
+/front/package-lock.json
+/front/node_modules
+/front/.angular
+
+# Backend Build Output
+/back/node_modules
+/back/dist
+/back/package-lock.json
+
