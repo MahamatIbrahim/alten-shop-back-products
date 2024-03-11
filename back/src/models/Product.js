@@ -2,15 +2,15 @@ import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
     id: Number,
-    code: String,
-    name: String,
-    description: String,
-    price: Number,
-    quantity: Number,
-    inventoryStatus: String,
-    category: String,
+    code: { type: String, required: true },
+    name: { type: String, required: true },
+    description: { type: String, required: true },
+    price: { type: Number, required: true },
+    quantity: { type: Number, default: 0 },
+    inventoryStatus: { type: String, required: true },
+    category: { type: String, required: true },
     image: String,
-    rating: Number, 
+    rating: Number
   });
   
   productSchema.pre('save', async function(next) {
