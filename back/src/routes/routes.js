@@ -13,8 +13,7 @@ router.get("/products", productController.getAllProducts);
 router.get("/products/:id", productController.getProductsById);
 router.post("/products/add", productController.addProducts);
 router.put("/products/update/:id", productController.updateProductsById);
-router.delete('/products/delete/:id', productController.deleteProducts);
-
+router.delete("/products/delete/:id", productController.deleteProducts);
 /**
  * @openapi
  * /products:
@@ -34,7 +33,6 @@ router.delete('/products/delete/:id', productController.deleteProducts);
  *         404:
  *          description: products not found
  */
-
 
 /**
  * @openapi
@@ -60,6 +58,7 @@ router.delete('/products/delete/:id', productController.deleteProducts);
  *         404:
  *          description: product not found
  */
+
 /**
  * @openapi
  * /products/add:
@@ -94,7 +93,7 @@ router.delete('/products/delete/:id', productController.deleteProducts);
  *        parameters:
  *          - in: path
  *            name: id
- *
+ *            required: true
  *            description: The product ID
  *            schema:
  *              type: number
@@ -114,6 +113,7 @@ router.delete('/products/delete/:id', productController.deleteProducts);
  *         404:
  *          description: product not found
  */
+
 /**
  * @openapi
  * /products/delete/{id}:
@@ -137,6 +137,42 @@ router.delete('/products/delete/:id', productController.deleteProducts);
  *             $ref: '#/components/schemas/Product'
  *         404:
  *          description: product not found
+ */
+
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Product:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: number
+ *         code:
+ *           type: string
+ *           required: true
+ *         name:
+ *           type: string
+ *           required: true
+ *         description:
+ *           type: string
+ *           required: true
+ *         price:
+ *           type: number
+ *           required: true
+ *         quantity:
+ *           type: number
+ *           default: 0
+ *         inventoryStatus:
+ *           type: string
+ *           required: true
+ *         category:
+ *           type: string
+ *           required: true
+ *         image:
+ *           type: string
+ *         rating:
+ *           type: number
  */
 
 export default router;
